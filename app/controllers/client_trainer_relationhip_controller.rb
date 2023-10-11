@@ -1,0 +1,2 @@
+class ClientTrainerRelationhipController < ApplicationController
+end

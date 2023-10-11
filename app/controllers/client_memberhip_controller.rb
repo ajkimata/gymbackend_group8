@@ -1,0 +1,2 @@
+class ClientMemberhipController < ApplicationController
+end
