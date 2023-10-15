@@ -1,6 +1,6 @@
 class TrainerController < ApplicationController
 
-    def index
+      def index
         @trainers = Trainer.all
         render json: @trainers
       end

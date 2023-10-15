@@ -1,6 +1,6 @@
 class ClientController < ApplicationController
 
-    def index
+      def index
         @clients = Client.all
         render json: @clients
       end
@@ -32,7 +32,7 @@ class ClientController < ApplicationController
       private
     
       def task_params
-        params.require(:client).permit(:username, :email)
+        params.require(:client).permit(:username, :email, :password)
       end
 
 end

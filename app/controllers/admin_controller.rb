@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
 
-    def index
+      def index
         @admins = Admin.all
         render json: @admins
       end
@@ -32,7 +32,7 @@ class AdminController < ApplicationController
       private
     
       def task_params
-        params.require(:admin).permit(:username, :email)
+        params.require(:admin).permit(:username, :email, :password)
       end
       
 end
