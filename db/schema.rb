@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_170844) do
     t.string "phone_number"
     t.string "role"
     t.string "permissions"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_170844) do
     t.integer "trainer_id"
     t.text "fitness_goals"
     t.text "reviews"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,6 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_09_170844) do
     t.string "skill_area"
     t.date "training_start_date"
     t.date "training_end_date"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

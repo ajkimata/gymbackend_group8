@@ -9,6 +9,7 @@ class CreateAdmins < ActiveRecord::Migration[7.0]
       t.string :role
       t.string :permissions
 
+      t.string :password_digest
       t.timestamps
     end
   end

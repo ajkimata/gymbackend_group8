@@ -32,8 +32,7 @@ class TrainerController < ApplicationController
       private
     
       def task_params
-        params.require(:client).permit(:username, :email)
+        params.permit(:username, :email, :password)
       end
-
 
 end

@@ -14,6 +14,7 @@ class CreateClients < ActiveRecord::Migration[7.0]
       t.text :fitness_goals
       t.text :reviews
       
+      t.string :password_digest
       t.timestamps
     end
   end

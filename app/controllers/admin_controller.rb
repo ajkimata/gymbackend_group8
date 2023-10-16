@@ -32,7 +32,7 @@ class AdminController < ApplicationController
       private
     
       def task_params
-        params.require(:admin).permit(:username, :email, :password)
+        params.permit(:username, :email, :password)
       end
       
 end

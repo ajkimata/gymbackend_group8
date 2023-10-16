@@ -11,6 +11,7 @@ class CreateTrainers < ActiveRecord::Migration[7.0]
       t.date :training_start_date
       t.date :training_end_date
 
+      t.string :password_digest
       t.timestamps
     end
   end
