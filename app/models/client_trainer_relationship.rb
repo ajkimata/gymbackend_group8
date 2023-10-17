@@ -1,0 +1,2 @@
+class ClientTrainerRelationship < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class ClientMembership < ApplicationRecord
+end

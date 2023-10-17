@@ -1,0 +1,2 @@
+class ProgressTracking < ApplicationRecord
+end

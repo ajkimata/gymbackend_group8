@@ -1,0 +1,2 @@
+class GymMaintenance < ApplicationRecord
+end
