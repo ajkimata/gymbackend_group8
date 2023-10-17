@@ -1,0 +1,2 @@
+class ClientMembershipController < ApplicationController
+end
