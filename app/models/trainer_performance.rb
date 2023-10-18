@@ -1,0 +1,2 @@
+class TrainerPerformance < ApplicationRecord
+end

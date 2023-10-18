@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2023_10_16_135046) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +24,50 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_135046) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["jti"], name: "index_users_on_jti", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+=======
+ActiveRecord::Schema[7.0].define(version: 2023_10_09_170844) do
+  create_table "admins", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "email"
+    t.string "phone_number"
+    t.string "role"
+    t.string "permissions"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "email"
+    t.string "phone_number"
+    t.string "role"
+    t.string "membership_type"
+    t.date "membership_start_date"
+    t.date "membership_end_date"
+    t.integer "trainer_id"
+    t.text "fitness_goals"
+    t.text "reviews"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trainers", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "email"
+    t.string "phone_number"
+    t.string "role"
+    t.string "skill_area"
+    t.date "training_start_date"
+    t.date "training_end_date"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> otherRepo/future
   end
 
 end

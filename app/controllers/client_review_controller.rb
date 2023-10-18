@@ -1,0 +1,2 @@
+class ClientReviewController < ApplicationController
+end
