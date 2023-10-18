@@ -32,7 +32,7 @@ class ClientController < ApplicationController
       private
     
       def task_params
-        params.permit(:username, :email, :password)
+        params.permit(:name, :role, :phone_number, :username, :email, :password)
       end
 
 end
