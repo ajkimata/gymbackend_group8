@@ -2,6 +2,7 @@ class Client < ApplicationRecord
   # Associations
   has_one :user, as: :role # Link to the User for authentication and registration
   belongs_to :trainer, optional: true # A client can be linked to a trainer
+  validates :username, presence: true, uniqueness: true
 
   # Validations
   validates :email, presence: true, uniqueness: true

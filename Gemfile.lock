@@ -207,6 +207,7 @@ DEPENDENCIES
   rails (~> 7.0.8)
   sqlite3 (~> 1.4)
   tzinfo-data
+  warden-jwt_auth
 
 RUBY VERSION
    ruby 2.7.4p191

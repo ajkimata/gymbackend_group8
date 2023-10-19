@@ -120,8 +120,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     puts "Role Type: #{role_type}" # Debugging
 
     # Validate the role type before attempting to create a user
-    role = create_role(role_type)
-    return render json: { status: { message: 'Invalid role type provided' } }, status: :unprocessable_entity unless role
+    role = create_role(role_type, params[:user])
+    unless role
+      return render json: { status: { message: 'Invalid role type provided or role creation failed' } },
+                    status: :unprocessable_entity
+    end
 
     build_resource(sign_up_params)
 
@@ -140,7 +143,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:role_type])
+    # Added :username, :email, and :password to permitted params for sign up
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[role_type username email password])
   end
 
   def respond_with_resource(resource)
@@ -170,14 +174,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     }, status: :unprocessable_entity
   end
 
-  def create_role(role_type)
+  def create_role(role_type, user_params)
     case role_type
     when 'Admin'
-      Admin.create
+      Admin.create(username: user_params[:username])
     when 'Client'
-      Client.create
+      Client.create(username: user_params[:username])
     when 'Trainer'
-      Trainer.create
+      Trainer.create(username: user_params[:username])
     else
       nil # Invalid role type
     end
