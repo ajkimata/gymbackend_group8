@@ -1,7 +1,131 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+require("pry-byebug")
+require_relative("../models/member.rb")
+require_relative("../models/gymclass.rb")
+require_relative("../models/attendence.rb")
+
+Member.delete_all()
+Gymclass.delete_all()
+Attendence.delete_all()
+
+member1 = Member.new({
+  "name" => "Jon Snow",
+  "email" => "kinginthenorth@housestark.co.uk",
+  "mobile_number" => "0131 225 9846"
+  })
+
+member1.save()
+
+member2 = Member.new({
+  "name" => "Gregor Clegane",
+  "email" => "mountain@houselannister.co.uk",
+  "mobile_number" => "0131 215 1234"
+  })
+
+member2.save()
+
+member3 = Member.new({
+  "name" => "Daenerys Targaryn",
+  "email" => "stormborn@housetargaryn.co.uk",
+  "mobile_number" => "0131 527 1711"
+  })
+
+member3.save()
+
+member4 = Member.new({
+  "name" => "Tormund Giantsbane",
+  "email" => "thegiant@wildlings.co.uk",
+  "mobile_number" => "0345 013 3196"
+  })
+
+member4.save()
+
+member5 = Member.new({
+  "name" => "Sansa Stark",
+  "email" => "ladyofwinterfell@housestark.co.uk",
+  "mobile_number" => "0131 558 1200"
+  })
+
+member5.save()
+
+gymclass1 = Gymclass.new({
+  "name" => "Cycle",
+  "duration" => "30 mins",
+  "calories" => "300",
+  "instructor" => "Katarzyna Piskorz"
+  })
+
+gymclass1.save()
+
+gymclass2 = Gymclass.new({
+  "name" => "Burn it",
+  "duration" => "30 mins",
+  "calories" => "250",
+  "instructor" => "Gareth Carr"
+  })
+
+gymclass2.save()
+
+gymclass3 = Gymclass.new({
+  "name" => "Yoga",
+  "duration" => "60 mins",
+  "calories" => "350",
+  "instructor" => "Michele Lindsay"
+  })
+
+gymclass3.save()
+
+gymclass4 = Gymclass.new({
+  "name" => "Absolute Abs",
+  "duration" => "15 mins",
+  "calories" => "38",
+  "instructor" => "Struan Nevin"
+  })
+
+gymclass4.save()
+
+gymclass5 = Gymclass.new({
+  "name" => "Zumba",
+  "duration" => "45 mins",
+  "calories" => "262",
+  "instructor" => "Jennifer Geary"
+  })
+
+gymclass5.save()
+
+attendence1 = Attendence.new({
+  "member_id" => member1.id,
+  "gymclass_id" => gymclass4.id
+  })
+
+attendence1.save()
+
+attendence2 = Attendence.new({
+  "member_id" => member2.id,
+  "gymclass_id" => gymclass2.id
+  })
+
+attendence2.save()
+
+attendence3 = Attendence.new({
+  "member_id" => member3.id,
+  "gymclass_id" => gymclass3.id
+  })
+
+attendence3.save()
+
+attendence4 = Attendence.new({
+  "member_id" => member4.id,
+  "gymclass_id" => gymclass5.id
+  })
+
+attendence4.save()
+
+attendence5 = Attendence.new({
+  "member_id" => member5.id,
+  "gymclass_id" => gymclass1.id
+  })
+
+attendence5.save()
+
+binding.pry
+nil
