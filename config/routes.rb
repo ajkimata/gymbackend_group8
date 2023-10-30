@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     delete '/delete', to: 'users/registrations#destroy'
   end
   resources :workouts
-
+  resources :users
   resources :admin, only: %i[index create update destroy]
   resources :client, only: %i[index create update destroy]
   resources :trainer, only: %i[index create update destroy]
